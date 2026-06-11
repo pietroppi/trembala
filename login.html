@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --background: #F7F4EF;
+    --card: #FFFFFF;
+    --text: #1D1D1D;
+    --secondary: #7A7A7A;
+    --primary: #1E4D3D;
+    --primary-hover: #173B30;
+    --accent: #B8926A;
+    --border: #EAE4DC;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--background);
+    font-family:'Cormorant Garamond', serif;
+}
+
+.login-container{
+    width:420px;
+    background:var(--card);
+    padding:50px;
+    border-radius:24px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.05),
+        0 5px 15px rgba(0,0,0,.03);
+}
+
+.brand{
+    color:var(--accent);
+    font-size:14px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:58px;
+    color:var(--text);
+    font-weight:600;
+    line-height:1;
+}
+
+.description{
+    color:var(--secondary);
+    font-size:22px;
+    margin-top:10px;
+    margin-bottom:35px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    color:var(--text);
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    outline:none;
+    font-size:18px;
+    font-family:'Cormorant Garamond', serif;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:var(--primary);
+}
+
+button{
+    width:100%;
+    margin-top:10px;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:var(--primary);
+    color:white;
+    font-size:22px;
+    font-family:'Cormorant Garamond', serif;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:var(--primary-hover);
+}
+
+.footer{
+    margin-top:22px;
+    text-align:center;
+    color:var(--secondary);
+    font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="brand">ACCESS</div>
+
+    <h1>Entrar</h1>
+    <p class="description">
+        Faça login para acessar sua conta.
+    </p>
+
+    <form id="loginForm">
+
+        <div class="field">
+            <label>Email</label>
+            <input
+                type="email"
+                placeholder="seuemail@exemplo.com"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label>Senha</label>
+            <input
+                type="password"
+                placeholder="••••••••"
+                required
+            >
+        </div>
+
+        <button type="submit">
+            Continuar
+        </button>
+
+    </form>
+
+    <div class="footer">
+        Acesso seguro
+    </div>
+
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Redireciona para a Home
+    window.location.href = "/home";
+});
+</script>
+
+</body>
+</html>
